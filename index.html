@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pham Thi Phuong Linh | Personal Site</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+  <script src="https://use.fontawesome.com/releases/v6.5.2/js/all.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(to right bottom, #fff5f7, #ffe4e6, #ffd4d7, #ffd4d7, #fff5f7);
+      background-attachment: fixed;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .section-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(225, 29, 72, 0.1);
+      border-left: 4px solid #e11d48;
+      overflow: hidden;
+    }
+    .section-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .section-header:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 60px;
+      background: linear-gradient(90deg, #e11d48, #fda4af);
+    }
+    .experience-card, .project-card, .education-card {
+      border-left: 3px solid #e11d48;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+      transition: all 0.3s ease;
+    }
+    .experience-card:hover, .project-card:hover, .education-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(225, 29, 72, 0.12);
+    }
+    .skills-container {
+      gap: 60px; /* Adjust this value as needed */
+    }
+    .skill-card {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal; /* Ensure text wraps within the card */
+    }
+    .star-rating i {
+      font-size: 1rem; /* Adjust star size */
+      margin: 0 2px; /* Space between stars */
+    }
+    .star-rating .fas.fa-star {
+      color: #f59e0b; /* Tailwind yellow-400, customizable */
+    }
+    /* Custom scrollbar */
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 8px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background-color: #f43f5e; /* Rose-400 */
+      border-radius: 4px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: #ffe4e6; /* Rose-100 */
+    }
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #f43f5e #ffe4e6;
+    }
+  </style>
+</head>
+<body class="bg-rose-50 text-gray-800">
+  <!-- Header -->
+  <header class="p-6 bg-white shadow-md">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-rose-700">Pham Thi Phuong Linh</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="text-gray-600 hover:text-rose-700">About</a>
+        <a href="#education" class="text-gray-600 hover:text-rose-700">Education</a>
+        <a href="#work" class="text-gray-600 hover:text-rose-700">Work</a>
+        <a href="#projects" class="text-gray-600 hover:text-rose-700">Projects</a>
+        <a href="#contact" class="text-gray-600 hover:text-rose-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-20 text-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-50">
+    <img src="assets/ava.jpg" alt="Her Photo" class="w-32 h-32 mx-auto rounded-full mb-6 shadow-lg object-cover border-4 border-white">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Phuong Linh, call me pling!</h2>
+    <p class="text-lg max-w-2xl mx-auto text-gray-700">
+      With experience in marketing, project management, and audience engagement across multiple industries, I am passionate about merging education, psychology, and art to create meaningful cultural initiatives.
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">About Me</h2>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        I aim to contribute my strategic thinking and creativity to support missions that advance contemporary art and community impact. I hold a Bachelor of Business English from UEH and professional certifications in TESOL and IELTS. My passion lies in education, cross-cultural exchange, and empowering others through meaningful storytelling and engagement.
+      </p>
+    </div>
+  </section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-16 max-w-4xl mx-auto px-6">
+  <div class="section-card p-8">
+    <div class="section-header pb-2 mb-6">
+      <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+        <i class="fas fa-brain mr-2"></i>Skills
+      </h2>
+    </div>
+    <div class="overflow-x-auto whitespace-nowrap flex space-x-8 pb-2">
+      <!-- Language Proficiency Card -->
+      <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Language Proficiency</h3>
+        <p class="text-gray-700 text-sm">Fluent in Vietnamese and proficient in English, with an IELTS score of 7.0 and TESOL Certification. Essential for effective communication with domestics and international clients and artists.</p>
+      </div>
+
+      <!-- Organization and Time Management Card -->
+      <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Organization and Time Management</h3>
+        <p class="text-gray-700 text-sm">Get familiar with juggling multiple responsibilities, especially when managing multi stakeholders.</p>
+      </div>
+
+      <!-- Social Media and Marketing Card -->
+      <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Social Media and Marketing</h3>
+        <p class="text-gray-700 text-sm">Strong background in managing social media platforms, creating engaging content, and executing marketing campaigns that drive brand visibility and customer engagement.</p>
+      </div>
+
+      <!-- Communication Skill and Customer Engagement Card -->
+      <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Communication Skill and Customer Engagement</h3>
+        <p class="text-gray-700 text-sm">Proficient in delivering presentations and conducting training sessions. Adept at working across teams and maintaining professional relationships with clients, colleagues, stakeholders.</p>
+      </div>
+
+      <!-- Event Planning Skills Card -->
+      <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Event Planning Skills</h3>
+        <p class="text-gray-700 text-sm">Experienced in conceptualizing, planning, and executing cultural tour projects (SEA market).</p>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Education Section -->
+  <section id="education" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">
+          <i class="fas fa-graduation-cap mr-2"></i>Education
+        </h2>
+      </div>
+      <div class="space-y-6">
+        <div class="education-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Bachelor of Business English</h3>
+              <p class="text-gray-700 text-lg">UNIVERSITY OF ECONOMIC (UEH)</p>
+              <p class="text-rose-700 font-medium mt-2">Scholarship for Excellent Students (2017-2020)</p>
+              <p class="text-gray-700">Graduated with a GPA of 3.4</p>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2017 — 2021
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">Professional Experience</h2>
+      </div>
+      <div class="space-y-6">
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">E-Solution Media JSC</h3>
+              <p class="text-sm text-gray-600 italic">Customer Success Manager - Marketing Website Builder, Ho Chi Minh, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Built website & managed a portfolio of 15+ sales funnels, improving conversion by 30%.</li>
+                <li>Delivered 20+ training sessions and online workshops for diverse clients.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2024 — present
+            </div>
+          </div>
+        </div>
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">GaraSTEM JSC</h3>
+              <p class="text-sm text-gray-600 italic">International Business Development, Vietnam & Southeast Asia</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Expanded partnerships with 20+ international STEM organizations across ASEAN.</li>
+                <li>Led international educational tours, city tours, and cultural exchange programs.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2023 — 2024
+            </div>
+          </div>
+        </div>
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Transinex PTE LTD</h3>
+              <p class="text-sm text-gray-600 italic">Outbound Travel Agency, Vietnam & Singapore</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Managed tour operations, partnerships, and customer engagement.</li>
+                <li>Customized travel itineraries and provided consultation.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2022 — 2023
+            </div>
+          </div>
+        </div>
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">BLA' Glamping & Bunny Hill Farmstay</h3>
+              <p class="text-sm text-gray-600 italic">Operations Manager, Lam Dong, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Launched glamping site and achieved $10,000 monthly revenue.</li>
+                <li>Led marketing and streamlined workflows.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2021 — 2022
+            </div>
+          </div>
+        </div>
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Abbott Laboratories GmbH</h3>
+              <p class="text-sm text-gray-600 italic">HR Intern, Ho Chi Minh, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Assisted HR with engagement and process optimization.</li>
+                <li>Conducted 60+ exit interviews for organizational insights.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2020 — 2021
+            </div>
+          </div>
+        </div>
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Vietnam AIESEC Global</h3>
+              <p class="text-sm text-gray-600 italic">Partnership & Recruitment Executive, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Recruited 26 foreign English teachers in 4 months.</li>
+                <li>Collaborated with 15+ foreign AIESEC committees.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2019 — 2020
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">Featured Projects</h2>
+      </div>
+      <div class="space-y-6">
+        <div class="project-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Storytelling Workshop Series</h3>
+              <p class="text-sm text-gray-600 italic">Facilitator & Content Designer</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Designed and facilitated a storytelling series combining creative writing, visual art, and public speaking.</li>
+                <li>Created impact for marginalized youth communities in Vietnam.</li>
+                <li>Reached over 50 participants across 3 workshop cycles.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2023
+            </div>
+          </div>
+        </div>
+        <div class="project-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Vietnam Art & Culture Zine</h3>
+              <p class="text-sm text-gray-600 italic">Co-creator & Editor</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Co-created a community zine exploring feminist and cultural themes.</li>
+                <li>Featured interviews, essays, and photography from local artists.</li>
+                <li>Distributed across 5 art collectives reaching 300+ readers.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2022 — 2023
+            </div>
+          </div>
+        </div>
+        <div class="project-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Cross-cultural Dialogues Podcast</h3>
+              <p class="text-sm text-gray-600 italic">Host & Producer</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Launched a podcast series featuring voices from Southeast Asia on identity, gender, and education.</li>
+                <li>Reached over 1,000 monthly listeners.</li>
+                <li>Produced 12 episodes with guests from 5 different countries.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2022
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+          <i class="fas fa-certificate mr-2"></i>Certificates
+        </h2>
+      </div>
+      <div class="overflow-x-auto whitespace-nowrap flex space-x-8 pb-2">
+        <!-- TESOL Professional Certificate Card -->
+        <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+          <h3 class="font-bold text-lg mb-1">TESOL Professional Certificate</h3>
+          <p class="text-gray-700 text-sm">Arizona State University</p>
+          <div class="star-rating flex justify-center mt-1">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+
+        <!-- IELTS 7.0 Card -->
+        <div class="skill-card inline-block bg-white p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+          <h3 class="font-bold text-lg mb-1">IELTS 7.0</h3>
+          <p class="text-gray-700 text-sm">IDP</p>
+          <div class="star-rating flex justify-center mt-1">
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+            <i class="fas fa-star text-yellow-400"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">Contact</h2>
+      </div>
+      <p class="text-gray-700 mb-4">Want to connect? Reach out via email or social media:</p>
+      <ul class="space-y-2 mb-6">
+        <li>
+          <i class="fas fa-envelope mr-2 text-rose-600"></i>
+          Email: <a href="mailto:her@email.com" class="text-rose-600 hover:underline">her@email.com</a>
+        </li>
+        <li>
+          <i class="fab fa-linkedin mr-2 text-rose-600"></i>
+          LinkedIn: <a href="https://www.linkedin.com/in/her" target="_blank" class="text-rose-600 hover:underline">linkedin.com/in/her</a>
+        </li>
+        <li>
+          <i class="fab fa-instagram mr-2 text-rose-600"></i>
+          Instagram: <a href="https://www.instagram.com/her" target="_blank" class="text-rose-600 hover:underline">instagram.com/her</a>
+        </li>
+        <li>
+          <i class="fab fa-facebook mr-2 text-rose-600"></i>
+          Facebook: <a href="https://www.facebook.com/her" target="_blank" class="text-rose-600 hover:underline">facebook.com/her</a>
+        </li>
+        <li>
+          <i class="fab fa-youtube mr-2 text-rose-600"></i>
+          YouTube: <a href="https://www.youtube.com/@her" target="_blank" class="text-rose-600 hover:underline">youtube.com/@her</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm text-gray-500">
+    May we rise, rooted in care and courage. ✫<br>
+    Created with ❤️ by sotf
+  </footer>
+</body>
+</html>
