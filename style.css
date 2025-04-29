@@ -1,0 +1,84 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(to right bottom, #fff5f7, #ffe4e6, #ffd4d7, #ffd4d7, #fff5f7);
+    background-attachment: fixed;
+  }
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  .section-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(225, 29, 72, 0.1);
+    border-left: 4px solid #e11d48;
+    overflow: hidden;
+  }
+  .section-header {
+    position: relative;
+    overflow: hidden;
+  }
+  .section-header:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    background: linear-gradient(90deg, #e11d48, #fda4af);
+  }
+  .experience-card, .project-card, .education-card {
+    border-left: 3px solid #e11d48;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+    transition: all 0.3s ease;
+  }
+  .experience-card:hover, .project-card:hover, .education-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(225, 29, 72, 0.12);
+  }
+  .skills-container {
+    gap: 60px; /* Adjust this value as needed */
+  }
+  .skill-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Ensure text wraps within the card */
+  }
+  .star-rating i {
+    font-size: 1rem; /* Adjust star size */
+    margin: 0 2px; /* Space between stars */
+  }
+  .star-rating .fas.fa-star {
+    color: #f59e0b; /* Tailwind yellow-400, customizable */
+  }
+  /* Custom scrollbar */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 8px;
+  }
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background-color: #f43f5e; /* Rose-400 */
+    border-radius: 4px;
+  }
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: #ffe4e6; /* Rose-100 */
+  }
+  .overflow-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #f43f5e #ffe4e6;
+  }
+  .experience-card, .project-card, .education-card, .skill-card {
+    border-left: 3px solid #e11d48;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+    transition: all 0.3s ease;
+  }
+  .experience-card:hover, .project-card:hover, .education-card:hover, .skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(225, 29, 72, 0.12);
+  }
+
+  /* Keep these for Skills/Certificates-specific tweaks if needed */
+  .skill-card {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Ensure text wraps within the card */
+  }
