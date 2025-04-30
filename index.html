@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/fav/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/fav/favicon-16x16.png">
   <link rel="manifest" href="assets/fav/site.webmanifest">
+  <!-- Add in <head> -->
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -111,8 +112,197 @@
       overflow-wrap: break-word;
       white-space: normal; /* Ensure text wraps within the card */
     }
+
+    .gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    display: block;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-card:hover .gallery-image {
+    transform: scale(1.1);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* bg-opacity-50 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-card:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-text {
+    text-align: center;
+    color: white;
+    padding: 0 0.75rem; /* px-3 */
+  }
+
+  .gallery-title {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: bold;
+  }
+
+  .gallery-date {
+    font-size: 0.75rem; /* text-xs */
+    margin-top: 0.25rem;
+  }
+
+  .gallery-desc {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .popup-overlay.active {
+    display: flex;
+  }
+
+  .popup-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .popup-gallery {
+    display: grid;
+    grid-auto-flow: column;               /* Layout flows horizontally */
+    grid-template-rows: repeat(3, 1fr);   /* 3 rows */
+    gap: 1rem;
+    overflow-x: auto;                     /* Enable horizontal scroll */
+    padding-bottom: 0.5rem;
+  }
+
+  
+
+
+  .popup-gallery img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+  }
+  .popup-gallery {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    gap: 1rem;
+    overflow-x: auto;
+  }
+
+  .popup-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: contain;
+  }
+
+  .popup-gallery img:hover {
+    transform: scale(1.05);
+  }
+
+
+  .popup-close {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e11d48;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  .popup-gallery::-webkit-scrollbar {
+    height: 8px;
+  }
+  .popup-gallery::-webkit-scrollbar-thumb {
+    background-color: #f43f5e;
+    border-radius: 4px;
+  }
+  .popup-gallery::-webkit-scrollbar-track {
+    background: #ffe4e6;
+  }
+
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
   </style>
 </head>
+<script>
+  function openPopup(images, title = '') {
+    const gallery = document.getElementById("popupGallery");
+    const titleElement = document.getElementById("popupTitle");
+
+    if (!gallery || !titleElement) {
+      console.error("Popup elements not found");
+      return;
+    }
+
+    gallery.innerHTML = "";
+    titleElement.textContent = title;
+
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      gallery.appendChild(img);
+    });
+
+    document.getElementById("popupOverlay").classList.add("active");
+  }
+
+  // Close when pressing Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+  });
+
+  // Close when clicking outside (see HTML onclick handler)
+  function closePopupOnOutside(event) {
+    closePopup();
+  }
+
+
+  function closePopup() {
+    document.getElementById("popupOverlay").classList.remove("active");
+  }
+</script>
+
+
 <body class="bg-rose-50 text-gray-800">
   <!-- Header -->
   <header class="p-6 bg-white shadow-md">
@@ -387,33 +577,137 @@
         <div class="grid grid-rows-2 auto-cols-[250px] grid-flow-col gap-6">
           <!-- Image Card 1 -->
            <!-- This one need to always be at the first -->
-          <a href="https://www.facebook.com/profile.php?id=100006783901106" target="_blank"
-            class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-            <img src="assets/events/1.jpg" alt="Sinh ra trên đời" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-              <div class="text-center text-white px-3">
-                <h3 class="text-sm font-bold">Sinh ra trên đời</h3>
-                <p class="text-xs mt-1">05/01/2000</p>
-                <p class="text-xs mt-1 italic opacity-90">Vì trong mắt người đó, tôi biết tôi còn đẹp hơn cả Mona Lisa.</p>
+           <div class="gallery-card" onclick="openPopup(
+            ['assets/events/1.jpg', 'assets/events/1-1.jpg', 'assets/events/1-2.jpg', 'assets/events/1-3.jpg', 'assets/events/1-4.jpg'], 
+            'Sinh ra trên đời')">
+            <img src="assets/events/1.jpg" alt="Sinh ra trên đời" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Sinh ra trên đời</h3>
+                <p class="gallery-date">05/01/2000</p>
+                <p class="gallery-desc">Vì trong mắt người đó, tôi biết tôi còn đẹp hơn cả Mona Lisa.</p>
               </div>
             </div>
-          </a>
+          </div>
+          
+          <div class="gallery-card" onclick="openPopup([
+            'assets/events/singapore/IMG_0013.JPG',
+            'assets/events/singapore/IMG_0108.JPG',
+            'assets/events/singapore/IMG_0170.jpeg',
+            'assets/events/singapore/IMG_0172.jpeg',
+            'assets/events/singapore/IMG_0172 2.jpeg',
+            'assets/events/singapore/IMG_0173.jpeg',
+            'assets/events/singapore/IMG_3864.jpg',
+            'assets/events/singapore/IMG_9983.JPG',
+            'assets/events/singapore/IMG_9989.JPG',
+            'assets/events/singapore/IMG_9997.jpeg'
+          ], 'Singapore')">
+            <img src="assets/events/singapore/IMG_0013.JPG" alt="Singapore" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Singapore</h3>
+                <p class="gallery-date">2023</p>
+                <p class="gallery-desc">First abroad travel</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-card" onclick="openPopup([
+          'assets/events/garastem/1.jpg',
+          'assets/events/garastem/IMG_1487.jpeg',
+          'assets/events/garastem/IMG_1493.jpeg',
+          'assets/events/garastem/IMG_1495.jpeg',
+          'assets/events/garastem/IMG_4610.jpeg',
+          'assets/events/garastem/IMG_4670.jpg',
+          'assets/events/garastem/IMG_5393.jpg',
+          'assets/events/garastem/IMG_5401.jpg',
+          'assets/events/garastem/IMG_5453.jpeg',
+          'assets/events/garastem/IMG_5502.jpeg',
+          'assets/events/garastem/IMG_5528.jpg',
+          'assets/events/garastem/IMG_5732.JPG',
+          'assets/events/garastem/IMG_5768.PNG',
+          'assets/events/garastem/IMG_7795.jpeg'
+        ], 'GARASTEM')">
+          <img src="assets/events/garastem/IMG_1487.jpeg" alt="GARASTEM" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-text">
+              <h3 class="gallery-title">GARASTEM</h3>
+              <p class="gallery-date">2023</p>
+              <p class="gallery-desc">A wonder journey of education partnership development</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPopup([
+          'assets/events/uob/IMG_3616.jpg',
+          'assets/events/uob/IMG_3631.jpg'
+        ], 'UOB Painting of the Year')">
+          <img src="assets/events/uob/IMG_3616.jpg" alt="UOB Painting of the Year" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-text">
+              <h3 class="gallery-title">UOB Painting of the Year</h3>
+              <p class="gallery-date">2023</p>
+              <p class="gallery-desc">A wonderful art exhibition</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPopup([
+          'assets/events/eiy/IMG_5237.jpeg',
+          'assets/events/eiy/IMG_5238.jpeg'
+        ], 'EIY')">
+          <img src="assets/events/eiy/IMG_5237.jpeg" alt="EIY" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-text">
+              <h3 class="gallery-title">EIY</h3>
+              <p class="gallery-date">2023</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="gallery-card" onclick="openPopup([
+          'assets/events/abott/1.JPG', 'assets/events/abott/4.JPG'
+        ], 'ABOTT')">
+          <img src="assets/events/abott/1.JPG" alt="ABOTT" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-text">
+              <h3 class="gallery-title">ABOTT</h3>
+              <p class="gallery-date">2021</p>
+              <p class="gallery-desc">Internship</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-card" onclick="openPopup([
+          'assets/events/art-therapy/IMG_0829.jpeg'
+        ], 'Art Therapy')">
+          <img src="assets/events/art-therapy/IMG_0829.jpeg" alt="Art Therapy" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="gallery-text">
+              <h3 class="gallery-title">Art Therapy</h3>
+              <p class="gallery-date">2025</p>
+              <p class="gallery-desc">A workshop to understand more about applying art to therapy</p>
+            </div>
+          </div>
+        </div>
+
+
+
   
           <!-- Image Card 2 -->
-          <a href="https://www.facebook.com/share/r/1BPchi2A7v/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/2.png" alt="À Ố show" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">À Ố show</h3>
-                  <p class="text-xs mt-1">01/01/2025</p>
-                  <p class="text-xs mt-1 italic opacity-90">Chương trình xiếc đặc sắc trước giao thừa.</p>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/2.png" alt="À Ố show" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">À Ố show</h3>
+                <p class="gallery-date">01/01/2025</p>
+                <p class="gallery-desc">Chương trình xiếc đặc sắc trước giao thừa.</p>
               </div>
             </div>
-          </a>
-          
-          <a href="https://www.facebook.com/share/r/1LJSQUePnM/" target="_blank">
+          </div>
+
             <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
               <img src="assets/events/3.png" alt="Make a professional video about fashion" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
               <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
@@ -423,132 +717,112 @@
                 </div>
               </div>
             </div>
-          </a>
           
-          <div>
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/4.jpg" alt="Art Exhibition" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Art Exhibition</h3>
-                  <p class="text-xs mt-1">29/01/2024</p>
+            <div class="gallery-card">
+              <img src="assets/events/4.jpg" alt="Art Exhibition" class="gallery-image">
+              <div class="gallery-overlay">
+                <div class="gallery-text">
+                  <h3 class="gallery-title">Art Exhibition</h3>
+                  <p class="gallery-date">29/01/2024</p>
                 </div>
+              </div>
+            </div>
+            
+          
+          <div class="gallery-card">
+            <img src="assets/events/5.jpg" alt="The Muse art space" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">The Muse art space</h3>
+                <p class="gallery-date">25/01/2024</p>
               </div>
             </div>
           </div>
           
-          <a href="https://www.facebook.com/share/p/1ZVDRsHEtb/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/5.jpg" alt="The Muse art space" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">The Muse art space</h3>
-                  <p class="text-xs mt-1">25/01/2024</p>
-                </div>
-              </div>
-            </div>
-          </a>
           
-          <a href="https://www.facebook.com/share/r/1AKMwDCJQJ/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/6.png" alt="Drawing workshop" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Drawing workshop</h3>
-                  <p class="text-xs mt-1">24/12/2023</p>
-                  <p class="text-xs mt-1 italic opacity-90">Tranquil Blooming Tulip</p>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/6.png" alt="Drawing workshop" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Drawing workshop</h3>
+                <p class="gallery-date">24/12/2023</p>
+                <p class="gallery-desc">Tranquil Blooming Tulip</p>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a href="https://www.facebook.com/share/r/19KffgbVa1/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/7.png" alt="Hoà nhạc giáng sinh" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Hoà nhạc giáng sinh</h3>
-                  <p class="text-xs mt-1">18/12/2023</p>
-                  <p class="text-xs mt-1 italic opacity-90">Ghép video v mà bắt tôi đọc tên</p>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/7.png" alt="Hoà nhạc giáng sinh" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Hoà nhạc giáng sinh</h3>
+                <p class="gallery-date">18/12/2023</p>
+                <p class="gallery-desc">Ghép video v mà bắt tôi đọc tên</p>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a href="https://www.facebook.com/photo/?fbid=3868481223387970&set=pcb.3868481286721297" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/8.jpg" alt="Nghiệm Cảnh" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Nghiệm Cảnh</h3>
-                  <p class="text-xs mt-1">16/12/2023</p>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/8.jpg" alt="Nghiệm Cảnh" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Nghiệm Cảnh</h3>
+                <p class="gallery-date">16/12/2023</p>
               </div>
             </div>
-          </a>
+          </div>
+          
 
           <!-- Event: Làm cây thông gì đó -->
-          <a href="https://www.facebook.com/share/r/197Dr6vSNg/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/9.png" alt="Làm cây thông gì đó" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Làm cây thông gì đó</h3>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/9.png" alt="Làm cây thông gì đó" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Làm cây thông gì đó</h3>
               </div>
             </div>
-          </a>
+          </div>
+          
 
           <!-- Event: Van Gogh -->
-          <a href="https://www.facebook.com/share/r/16EVtRsvWa/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/10.png" alt="Van Gogh" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Van Gogh</h3>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/10.png" alt="Van Gogh" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Van Gogh</h3>
               </div>
             </div>
-          </a>
+          </div>
+          
 
           <!-- Event: Mid life crisis -->
-          <a href="https://www.facebook.com/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/11.jpg" alt="Mid life crisis" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Mid life crisis</h3>
-                </div>
+          <div class="gallery-card">
+            <img src="assets/events/11.jpg" alt="Mid life crisis" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Mid life crisis</h3>
               </div>
             </div>
-          </a>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/events/12.jpg" alt="Vẽ tranh cùng Mia" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">Vẽ tranh với c Mia</h3>
+                <p class="gallery-date">05/01/2000</p>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/events/13.jpg" alt="The hidden Charms" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-text">
+                <h3 class="gallery-title">The hidden Charms</h3>
+                <p class="gallery-desc">...</p>
+              </div>
+            </div>
+          </div>
 
-          <!-- Event: Sinh ra -->
-          <a href="https://www.facebook.com/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/12.jpg" alt="Vẽ tranh cùng Mia" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">Vẽ tranh với c Mia</h3>
-                  <p class="text-xs mt-1">05/01/2000</p>
-                  <p class="text-xs mt-1 italic opacity-90"></p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <!-- Event: Moss Art? -->
-          <a href="https://www.facebook.com/share/p/164Xm7m5Qd/" target="_blank">
-            <div class="relative group overflow-hidden rounded-lg shadow-md border border-gray-200 block">
-              <img src="assets/events/13.jpg" alt="The hidden Charms" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-              <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                <div class="text-center text-white px-3">
-                  <h3 class="text-sm font-bold">The hidden Charms</h3>
-                  <p class="text-xs mt-1 italic opacity-90">...</p>
-                </div>
-              </div>
-            </div>
-          </a>
 
           
           <!-- More image cards... -->
@@ -666,5 +940,17 @@
     May we rise, rooted in care and courage. ✫<br>
     Created with ❤️ by sotf
   </footer>
+
+  <!-- Popup Modal -->
+  <div id="popupOverlay" class="popup-overlay" onclick="closePopupOnOutside(event)">
+    <div class="popup-content" onclick="event.stopPropagation()">
+      <div class="popup-close" onclick="closePopup()">✕</div>
+      <h2 id="popupTitle" class="text-2xl font-bold text-rose-600 mb-4 text-center"></h2>
+      <div id="popupGallery" class="popup-gallery"></div>
+    </div>
+  </div>
+  
+  
+
 </body>
 </html>
