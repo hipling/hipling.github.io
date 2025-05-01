@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/fav/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/fav/android-chrome-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="assets/fav/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/fav/favicon-16x16.png">
+  <link rel="manifest" href="assets/fav/site.webmanifest">
+  <!-- Add in <head> -->
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pham Thi Phuong Linh - Executive Assistant, Project Coordinator, passionate about cultural and educational initiatives.">
+  <title>Pham Thi Phuong Linh | Personal Site</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+  <script src="https://use.fontawesome.com/releases/v6.5.2/js/all.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-image: linear-gradient(to right bottom, #fff5f7, #ffe4e6, #ffd4d7, #ffd4d7, #fff5f7);
+      background-attachment: fixed;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .section-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(225, 29, 72, 0.1);
+      border-left: 4px solid #e11d48;
+      overflow: hidden;
+    }
+    .section-header {
+      position: relative;
+      overflow: hidden;
+    }
+    .section-header:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 60px;
+      background: linear-gradient(90deg, #e11d48, #fda4af);
+    }
+    .experience-card, .project-card, .education-card {
+      border-left: 3px solid #e11d48;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+      transition: all 0.3s ease;
+    }
+    .experience-card:hover, .project-card:hover, .education-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(225, 29, 72, 0.12);
+    }
+    .skills-container {
+      gap: 60px; /* Adjust this value as needed */
+    }
+    .skill-card {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal; /* Ensure text wraps within the card */
+    }
+    .star-rating i {
+      font-size: 1rem; /* Adjust star size */
+      margin: 0 2px; /* Space between stars */
+    }
+    .star-rating .fas.fa-star {
+      color: #f59e0b; /* Tailwind yellow-400, customizable */
+    }
+    /* Custom scrollbar */
+    .overflow-x-auto::-webkit-scrollbar {
+      height: 8px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+      background-color: #f43f5e; /* Rose-400 */
+      border-radius: 4px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-track {
+      background: #ffe4e6; /* Rose-100 */
+    }
+    .overflow-x-auto {
+      scrollbar-width: thin;
+      scrollbar-color: #f43f5e #ffe4e6;
+    }
+    .experience-card, .project-card, .education-card, .skill-card {
+      border-left: 3px solid #e11d48;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.08);
+      transition: all 0.3s ease;
+    }
+    .experience-card:hover, .project-card:hover, .education-card:hover, .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(225, 29, 72, 0.12);
+    }
+  
+    /* Keep these for Skills/Certificates-specific tweaks if needed */
+    .skill-card {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal; /* Ensure text wraps within the card */
+    }
+
+    .gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    border: 1px solid #e5e7eb; /* border-gray-200 */
+    display: block;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 12rem; /* h-48 */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-card:hover .gallery-image {
+    transform: scale(1.1);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* bg-opacity-50 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-card:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-text {
+    text-align: center;
+    color: white;
+    padding: 0 0.75rem; /* px-3 */
+  }
+
+  .gallery-title {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: bold;
+  }
+
+  .gallery-date {
+    font-size: 0.75rem; /* text-xs */
+    margin-top: 0.25rem;
+  }
+
+  .gallery-desc {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .popup-overlay.active {
+    display: flex;
+  }
+  
+  .popup-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  /* 🧱 Pinterest-style masonry columns */
+  .popup-gallery {
+    column-count: 3;
+    column-gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .popup-gallery img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  
+    border: 4px solid white;          /* 👉 Adds the white frame */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Optional for soft depth */
+  }  
+  
+  .popup-gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Optional scrollbar styling */
+  .popup-gallery::-webkit-scrollbar {
+    width: 8px;
+  }
+  .popup-gallery::-webkit-scrollbar-thumb {
+    background-color: #f43f5e;
+    border-radius: 4px;
+  }
+  .popup-gallery::-webkit-scrollbar-track {
+    background: #ffe4e6;
+  }
+  
+  .popup-close {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e11d48;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .popup-gallery {
+      column-count: 2;
+    }
+  }
+  @media (max-width: 480px) {
+    .popup-gallery {
+      column-count: 1;
+    }
+  }
+  
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  </style>
+</head>
+<script>
+  function openPopup(images, title = '') {
+    const gallery = document.getElementById("popupGallery");
+    const titleElement = document.getElementById("popupTitle");
+
+    if (!gallery || !titleElement) {
+      console.error("Popup elements not found");
+      return;
+    }
+
+    gallery.innerHTML = "";
+    titleElement.textContent = title;
+
+    images.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy"; // 👈 Enables lazy loading
+      gallery.appendChild(img);
+    });
+
+    document.getElementById("popupOverlay").classList.add("active");
+  }
+
+  // Close when pressing Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+  });
+
+  // Close when clicking outside (see HTML onclick handler)
+  function closePopupOnOutside(event) {
+    closePopup();
+  }
+
+
+  function closePopup() {
+    document.getElementById("popupOverlay").classList.remove("active");
+  }
+</script>
+<script>
+  fetch("gallery.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("gallery-placeholder").innerHTML = html;
+    })
+    .catch(error => console.error("Error loading gallery:", error));
+</script>
+
+<body class="bg-rose-50 text-gray-800">
+  <!-- Header -->
+  <header class="p-6 bg-white shadow-md">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-rose-700">Pham Thi Phuong Linh</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="text-gray-600 hover:text-rose-700">About</a>
+        <a href="#education" class="text-gray-600 hover:text-rose-700">Education</a>
+        <a href="#work" class="text-gray-600 hover:text-rose-700">Work</a>
+        <a href="#projects" class="text-gray-600 hover:text-rose-700">Projects</a>
+        <a href="#gallery" class="text-gray-600 hover:text-rose-700">Gallery</a>
+        <a href="#contact" class="text-gray-600 hover:text-rose-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-20 text-center bg-gradient-to-r from-rose-50 via-rose-100 to-rose-50">
+    <img src="assets/ava.jpg" alt="Her Photo" class="w-32 h-32 mx-auto rounded-full mb-6 shadow-lg object-cover border-4 border-white">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Phuong Linh, call me pling!</h2>
+    <p class="text-lg max-w-2xl mx-auto text-gray-700">
+      With experience in marketing, project management, and audience engagement across multiple industries, I am passionate about merging education, psychology, and art to create meaningful cultural initiatives.
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+          <i class="fas fa-user mr-2"></i>About Me
+        </h2>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+      Passionate Executive Assistant and Project Coordinator with 4+ years of experience in client relationship management, event organization, and cross-cultural stakeholder engagement. Skilled in managing calendars, travel arrangements, and partner networks across Southeast Asia. Dedicated to supporting sustainable development initiatives through proactive organization, attention to detail, and bilingual communication (Vietnamese/English).
+    </p>
+    </div>
+  </section>
+
+<!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<section id="skills" class="py-16 max-w-4xl mx-auto px-6">
+  <div class="section-card p-8">
+    <div class="section-header pb-2 mb-6">
+      <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+        <i class="fas fa-brain mr-2"></i>Skills
+      </h2>
+    </div>
+    <div class="overflow-x-auto whitespace-nowrap flex space-x-8 pb-2">
+      <!-- Administrative & Project Coordination -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Administrative & Project Coordination</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Calendar management, scheduling, travel arrangements</li>
+          <li>Meeting coordination, event planning, reporting</li>
+          <li>Team support and task prioritization</li>
+        </ul>
+      </div>
+      <!-- Relationship Management & Community Engagement -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Relationship Management & Community Engagement</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Building and nurturing client and partner relationships</li>
+          <li>Community and member engagement strategies</li>
+          <li>Cross-sector collaboration & communication</li>
+        </ul>
+      </div>
+      <!-- Cross-cultural Stakeholder Engagement -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Cross-cultural Stakeholder Engagement</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Client management across ASEAN</li>
+          <li>Partnership development & network expansion</li>
+          <li>Bilingual: Vietnamese (Native), English (IELTS 7.0, TESOL Certified)</li>
+        </ul>
+      </div>
+      <!-- Training, Public Speaking & Facilitation -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Training, Public Speaking & Facilitation</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Workshop facilitation & program coordination</li>
+          <li>Event hosting & public speaking</li>
+        </ul>
+      </div>
+      <!-- Technology & Tools -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Technology & Tools</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Google Workspace, Zoom, Trello, Notion</li>
+          <li>CMS platforms, Canva, Capcut</li>
+          <li>Social Media Management</li>
+        </ul>
+      </div>
+      <!-- Organized, Focused, Detail-Oriented -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[250px] text-left">
+        <h3 class="font-bold text-lg mb-1">Organized, Focused, Detail-Oriented</h3>
+        <ul class="list-disc ml-4 text-gray-700 text-sm">
+          <li>Workflow streamlining, multitasking</li>
+          <li>High-quality, error-free outputs under deadlines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Work Section -->
+  <section id="work" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+          <i class="fas fa-briefcase mr-2"></i>Professional Experience
+        </h2>
+      </div>
+      <div class="space-y-6">
+  
+        <!-- E-SOLUTION MEDIA -->
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Customer Success Manager – Social Media Consultant</h3>
+              <p class="text-sm text-gray-600 italic">E-SOLUTION MEDIA JSC, Ho Chi Minh City, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Built and led a community of <strong>400+ solo entrepreneurs</strong> through workshops, mentoring, and community programs.</li>
+                <li><strong>Trained and supported</strong> clients in launching social media channels and personal branding.</li>
+                <li>Managed a team of 3 to develop websites and <strong>15+ sales funnels</strong>, increasing conversion rates by <strong>30%</strong>.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2024 – 02/2025
+            </div>
+          </div>
+        </div>
+  
+        <!-- GARASTEM -->
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">International Business Development Representative</h3>
+              <p class="text-sm text-gray-600 italic">GARASTEM JSC, Vietnam & Southeast Asia</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Managed partnerships with <strong>20+ international STEM organizations</strong> across ASEAN.</li>
+                <li>Planned and executed international tours, competitions, and cultural exchange programs.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2023 – 2024
+            </div>
+          </div>
+        </div>
+  
+        <!-- TRANSINEX -->
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Educational Travel Consultant</h3>
+              <p class="text-sm text-gray-600 italic">TRANSINEX PTE LTD, Vietnam & Singapore</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li><strong>Coordinated outbound and inbound</strong> tour operations and managed logistics and client relations.</li>
+                <li>Designed travel itineraries with a <strong>focus on educational and cultural immersion</strong>.</li>
+                <li>Provided personalized consultations tailored to individual needs.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2022 – 2023
+            </div>
+          </div>
+        </div>
+  
+        <!-- ABBOTT -->
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Human Resources Business Partner Intern</h3>
+              <p class="text-sm text-gray-600 italic">ABBOTT LABORATORIES GMBH, Ho Chi Minh City, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Supported employee engagement and internal process optimization projects.</li>
+                <li>Conducted <strong>60+ exit interviews</strong> and delivered data-driven insights for retention strategies.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2020 – 2021
+            </div>
+          </div>
+        </div>
+  
+        <!-- AIESEC -->
+        <div class="experience-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Partnership Development & Recruitment Executive</h3>
+              <p class="text-sm text-gray-600 italic">Vietnam AIESEC Global, Ho Chi Minh City, Vietnam</p>
+              <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
+                <li>Recruited <strong>26 foreign English teachers</strong> within 4 months.</li>
+                <li>Worked with <strong>15+ international AIESEC committees</strong> for recruitment and screening.</li>
+                <li>Led <strong>cross-functional stakeholder collaboration</strong> to support international onboarding.</li>
+              </ul>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2019 – 2020
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+          <i class="fas fa-project-diagram mr-2"></i>Projects
+        </h2>
+      </div>
+      <div class="space-y-6">
+
+        <!-- PROJECTS_PLACEHOLDER -->
+  
+      </div>
+    </div>
+  </section>
+  <section id="gallery" class="py-16 max-w-6xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+          <i class="fas fa-images mr-2"></i> Art and other hobbies
+        </h2>
+      </div>
+  
+      <div class="overflow-x-auto">
+        <div class="grid grid-rows-2 auto-cols-[250px] grid-flow-col gap-6">
+
+            <!-- GALLERY_PLACEHOLDER -->
+        </div>
+    </div>
+    </div>
+  </section>
+  
+   <!-- Education Section -->
+   <section id="education" class="py-16 max-w-4xl mx-auto px-6">
+    <div class="section-card p-8">
+      <div class="section-header pb-2 mb-6">
+        <h2 class="text-3xl font-bold text-rose-700">
+          <i class="fas fa-graduation-cap mr-2"></i>Education
+        </h2>
+      </div>
+      <div class="space-y-6">
+        <div class="education-card bg-rose-50 p-6 rounded-xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+            <div>
+              <h3 class="font-bold text-lg">Bachelor of Business English</h3>
+              <p class="text-gray-700 text-lg">UNIVERSITY OF ECONOMIC (UEH)</p>
+              <p class="text-rose-700 font-medium mt-2">Scholarship for Excellent Students (2017-2020)</p>
+              <p class="text-gray-700">Graduated with a GPA of 3.4</p>
+            </div>
+            <div class="text-gray-600 font-semibold mt-2 md:mt-0">
+              2017 — 2021
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="py-16 max-w-4xl mx-auto px-6">
+  <div class="section-card p-8">
+    <div class="section-header pb-2 mb-6">
+      <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+        <i class="fas fa-certificate mr-2"></i>Certificates
+      </h2>
+    </div>
+    <div class="overflow-x-auto whitespace-nowrap flex space-x-8 pb-2">
+      <!-- IELTS -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">IELTS 7.0</h3>
+        <p class="text-gray-700 text-sm">IDP Education</p>
+      </div>
+      <!-- TESOL -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">TESOL Professional Certificate</h3>
+        <p class="text-gray-700 text-sm">Arizona State University</p>
+      </div>
+      <!-- Healing with the Arts -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Healing with the Arts</h3>
+        <p class="text-gray-700 text-sm">Coursera – University of Florida</p>
+      </div>
+      <!-- Google Digital Marketing -->
+      <div class="skill-card inline-block bg-rose-50 p-3 rounded-lg border-l-4 border-rose-700 min-w-[200px] text-center">
+        <h3 class="font-bold text-lg mb-1">Google Digital Marketing & E-commerce</h3>
+        <p class="text-gray-700 text-sm">Coursera</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact" class="py-16 max-w-4xl mx-auto px-6">
+  <div class="section-card p-8">
+    <div class="section-header pb-2 mb-6">
+      <h2 class="text-3xl font-bold text-rose-700 flex items-center">
+        <i class="fas fa-envelope mr-2"></i>Contact
+      </h2>
+    </div>
+    <p class="text-gray-700 mb-4">Want to connect? Reach out via email or social media:</p>
+    <ul class="space-y-2 mb-6">
+      <li>
+        <i class="fas fa-envelope mr-2 text-rose-600"></i>
+        Email: <a href="mailto:thiphuonglinh.pham99@gmail.com" class="text-rose-600 hover:underline">thiphuonglinh.pham99@gmail.com</a>
+      </li>
+      <li>
+        <i class="fas fa-phone mr-2 text-rose-600"></i>
+        Phone: <a href="tel:+84765558910" class="text-rose-600 hover:underline">(+84) 76-555-8910</a>
+      </li>
+      <li>
+        <i class="fab fa-linkedin mr-2 text-rose-600"></i>
+        LinkedIn: <a href="https://www.linkedin.com/in/linh-pham-1244b8268/" target="_blank" class="text-rose-600 hover:underline">linkedin.com/in/her</a>
+      </li>
+      <li>
+        <i class="fab fa-instagram mr-2 text-rose-600"></i>
+        Instagram: <a href="https://www.instagram.com/hiplin.g/" target="_blank" class="text-rose-600 hover:underline">instagram.com/hiplin.g/</a>
+      </li>
+      <li>
+        <i class="fab fa-facebook mr-2 text-rose-600"></i>
+        Facebook: <a href="https://www.facebook.com/profile.php?id=100006783901106" target="_blank" class="text-rose-600 hover:underline">facebook.com/hiplin.g</a>
+      </li>
+      <li>
+        <i class="fab fa-youtube mr-2 text-rose-600"></i>
+        YouTube: <a href="https://www.youtube.com/@her" target="_blank" class="text-rose-600 hover:underline">youtube.com/@commingsoon</a>
+      </li>
+      <li>
+        <i class="fab fa-tiktok mr-2 text-rose-600"></i>
+        TikTok: <a href="https://www.tiktok.com/@her" target="_blank" class="text-rose-600 hover:underline">tiktok.com/@commingsoon</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center text-sm text-gray-500">
+    May we rise, rooted in care and courage. ✫<br>
+    Created with ❤️ by sotf
+  </footer>
+
+  <!-- Popup Modal -->
+    <div id="popupOverlay" class="popup-overlay" onclick="closePopupOnOutside(event)">
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <div class="popup-close" onclick="closePopup()">✕</div>
+        <h2 id="popupTitle" class="text-2xl font-bold text-rose-600 mb-4 text-center"></h2>
+        <div id="popupGallery" class="popup-gallery"></div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>
