@@ -300,14 +300,6 @@
     document.getElementById("popupOverlay").classList.remove("active");
   }
 </script>
-<script>
-  fetch("gallery.html")
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("gallery-placeholder").innerHTML = html;
-    })
-    .catch(error => console.error("Error loading gallery:", error));
-</script>
 
 <body class="bg-rose-50 text-gray-800">
   <!-- Header -->
