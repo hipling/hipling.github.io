@@ -1,36 +1,38 @@
 [
-    {
-      "title": "Thanh Kieu Art-Culture Exhibition",
-      "role": "External Relations Manager",
-      "duration": "03/2025 – 04/2025",
-      "bullets": [
-        "Led external relations, managing partnerships with artists, sponsors, and guests.",
-        "Hosted the opening ceremony and facilitated artist-guest engagement.",
-        "Managed event communications, ensuring a smooth experience and strong media coverage."
-      ],
-      "image_folder": "assets/projects/Thanh Kieu"
-    },
-    {
-      "title": "Operation Manager",
-      "role": "BLA’ GLAMPING and BUNNY HILL FARMSTAY (Lam Dong, Vietnam)",
-      "duration": "2021 – 2022",
-      "bullets": [
-        "Launched a sustainable glamping site generating <strong>$10,000+ monthly revenue</strong> within 3 months.",
-        "Ran <strong>digital marketing campaigns</strong> to boost brand awareness and bookings.",
-        "<strong>Optimized workflows</strong> to enhance guest experience and operational efficiency."
-      ],
-      "image_folder": "assets/projects/Bla glamping"
-    },
-    {
-      "title": "Co-Founder",
-      "role": "FindFun Local Fashion Brand",
-      "duration": "2022",
-      "bullets": [
-        "<strong>Founded and operated</strong> a youth-oriented fashion startup from concept to customer engagement.",
-        "Led initiatives in <strong>project management, branding, operations</strong>, and community building.",
-        "Developed <strong>resilience, adaptability, and long-term commitment</strong> through real-world challenges."
-      ],
-      "image_folder": "assets/projects/Findfun"
-    }
-  ]
-  
+  {
+    "title": "Thanh Kieu Art-Culture Exhibition",
+    "role": "External Relations Manager",
+    "duration": "03/2025 – 04/2025",
+    "bullets": [
+      "Led external relations, managing partnerships with artists, sponsors, and guests.",
+      "Hosted the opening ceremony and facilitated artist-guest engagement.",
+      "Managed event communications, ensuring a smooth experience and strong media coverage."
+    ],
+    "image_folder": "assets/projects/Thanh Kieu",
+    "link": "https://www.facebook.com/share/p/1ANNsUEXsn/"
+  },
+  {
+    "title": "Operation Manager",
+    "role": "BLA’ GLAMPING and BUNNY HILL FARMSTAY (Lam Dong, Vietnam)",
+    "duration": "2021 – 2022",
+    "bullets": [
+      "Launched a sustainable glamping site generating <strong>$10,000+ monthly revenue</strong> within 3 months.",
+      "Ran <strong>digital marketing campaigns</strong> to boost brand awareness and bookings.",
+      "<strong>Optimized workflows</strong> to enhance guest experience and operational efficiency."
+    ],
+    "image_folder": "assets/projects/Bla glamping",
+    "link": ""
+  },
+  {
+    "title": "Co-Founder",
+    "role": "FindFun Local Fashion Brand",
+    "duration": "2022",
+    "bullets": [
+      "<strong>Founded and operated</strong> a youth-oriented fashion startup from concept to customer engagement.",
+      "Led initiatives in <strong>project management, branding, operations</strong>, and community building.",
+      "Developed <strong>resilience, adaptability, and long-term commitment</strong> through real-world challenges."
+    ],
+    "image_folder": "assets/projects/Findfun",
+    "link": ""
+  }
+]

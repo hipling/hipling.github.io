@@ -25,6 +25,7 @@ for project in projects:
     duration = project["duration"]
     bullets = project["bullets"]
     folder = project["image_folder"]
+    link = project.get("link", "").strip()
 
     images = get_images_from_folder(folder)
     if not images:
@@ -34,11 +35,15 @@ for project in projects:
     bullet_html = "\n".join(f"<li>{b}</li>" for b in bullets)
     image_list = ", ".join(f"'{img}'" for img in images)
 
+    link_html = f"""<a href="{link}" target="_blank" title="External link" class="ml-2 text-blue-500 hover:underline text-sm inline-flex items-center">
+        🔗
+    </a>""" if link else ""
+
     html_output += f"""
 <div class="project-card bg-rose-50 p-6 rounded-xl cursor-pointer" onclick="openPopup([{image_list}], '{title}')">
   <div class="flex flex-col md:flex-row md:justify-between md:items-start">
     <div>
-      <h3 class="font-bold text-lg">{title}</h3>
+      <h3 class="font-bold text-lg flex items-center">{title}{link_html}</h3>
       <p class="text-sm text-gray-600 italic">{role}</p>
       <ul class="list-disc ml-5 mt-2 text-sm text-gray-700">
         {bullet_html}
