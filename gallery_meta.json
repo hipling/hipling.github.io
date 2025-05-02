@@ -20,13 +20,19 @@
     "date": "2019",
     "desc": "Connecting youth with opportunities to develop leadership skills and make a positive impact.",
     "images": [
+      "assets/events/AIESEC/f864f09b-a59c-46ff-ad00-cbb713ba9453.jpeg",
       "assets/events/AIESEC/67627703_2549897851912987_5300103837854466048_n.jpg",
       "assets/events/AIESEC/67783841_2549856485250457_5964633302584262656_n.jpg",
       "assets/events/AIESEC/67794871_2549897768579662_2417183920329064448_n.jpg",
       "assets/events/AIESEC/69263721_2566276080275164_3837338844143812608_n.jpg",
       "assets/events/AIESEC/69313120_2566276056941833_775167659065999360_n.jpg",
       "assets/events/AIESEC/69498464_2566276043608501_493484466635800576_n.jpg",
-      "assets/events/AIESEC/69623614_2566274246942014_7891917890033549312_n.jpg"
+      "assets/events/AIESEC/69623614_2566274246942014_7891917890033549312_n.jpg",
+      "assets/events/AIESEC/30b86042-2fbc-46bc-8ac5-9cfa6897da5d.jpeg",
+      "assets/events/AIESEC/47b3dcc3-7f03-46f4-95fc-336ff1d31ac7.jpeg",
+      "assets/events/AIESEC/308b136b-85c9-42bb-ac69-eb23bd4a6553.jpeg",
+      "assets/events/AIESEC/ab6eaf49-707d-467f-b792-4f27cbd1d2b7.jpeg",
+      "assets/events/AIESEC/b744c67c-5474-46f1-8473-0692e0daa53d.jpeg"
     ]
   },
   "Bunny Hill": {
@@ -35,17 +41,17 @@
     "desc": "From farm to a house, to a home - holistic experience for family with kids.",
     "images": [
       "assets/events/Bunny Hill/475191427_4190010211235068_2468901041985329853_n.jpg",
-      "assets/events/Bunny Hill/475179497_4190009804568442_6978291140380742536_n.jpg",
       "assets/events/Bunny Hill/475015737_4190010201235069_3437665535248521600_n.jpg",
       "assets/events/Bunny Hill/475067753_4190009764568446_7085121328892496243_n.jpg",
       "assets/events/Bunny Hill/475129881_4190007411235348_6208257015470974063_n.jpg",
+      "assets/events/Bunny Hill/475179497_4190009804568442_6978291140380742536_n.jpg",
       "assets/events/Bunny Hill/475335059_4190010204568402_7360698045402568035_n.jpg",
       "assets/events/Bunny Hill/485795186_4237538423148913_781009357325050883_n.jpg"
     ]
   },
   "Eco": {
     "title": "Nature Lover & Avocator",
-    "date": "",
+    "date": "3",
     "desc": "Support sustainable development and environmental protection.",
     "images": [
       "assets/events/Eco/480360461_599147373019800_6587663863488922943_n.jpg",
@@ -70,7 +76,7 @@
   },
   "Family": {
     "title": "Family",
-    "date": "",
+    "date": "1",
     "desc": "",
     "images": [
       "assets/events/Family/484526923_4234392490130173_794576931566461849_n.jpg",
@@ -121,7 +127,7 @@
   },
   "Saigon": {
     "title": "Saigon",
-    "date": "",
+    "date": "2018",
     "desc": "",
     "images": [
       "assets/events/Saigon/199811205_3169383559964410_5641620394782767254_n.jpg",
@@ -143,47 +149,12 @@
       "assets/events/Saigon/489601258_17900996712159518_6459329117722031458_n.jpg"
     ]
   },
-  "Singapore": {
-    "title": "Singapore",
-    "date": "2022",
-    "desc": "Robot competition in Singapore.",
-    "images": [
-      "assets/events/Singapore/473422633_572159565718581_2161662117391138199_n.jpg",
-      "assets/events/Singapore/479715871_4206154256287330_3311496134993758310_n.jpg",
-      "assets/events/Singapore/480039537_4205064203063002_6272500706913330598_n.jpg",
-      "assets/events/Singapore/480081237_4205064279729661_6855889770502265477_n.jpg",
-      "assets/events/Singapore/480132026_4205064256396330_8340173839257268669_n.jpg",
-      "assets/events/Singapore/480187684_4205064229729666_1735099354861909301_n.jpg",
-      "assets/events/Singapore/480212590_4205064216396334_7105482377236513053_n.jpg",
-      "assets/events/Singapore/480218706_4205064149729674_7195190929246706260_n.jpg",
-      "assets/events/Singapore/480222274_4206154206287335_118695517514931104_n.jpg",
-      "assets/events/Singapore/480229573_4206154482953974_8741520010838796292_n.jpg",
-      "assets/events/Singapore/480230932_4205064196396336_6231000798488659514_n.jpg",
-      "assets/events/Singapore/480239128_4206154552953967_4482476482597447138_n.jpg",
-      "assets/events/Singapore/480242611_4206154252953997_4942946996495806798_n.jpg",
-      "assets/events/Singapore/480244146_4206154576287298_5493382993373039768_n.jpg",
-      "assets/events/Singapore/480244658_4206154666287289_4667058838172593965_n.jpg",
-      "assets/events/Singapore/480247577_4206154626287293_3178344682926489368_n.jpg",
-      "assets/events/Singapore/480271957_4206154559620633_3714860186642122794_n.jpg",
-      "assets/events/Singapore/480277822_4206154659620623_6282561744449427296_n.jpg",
-      "assets/events/Singapore/480283303_4206154532953969_3129719784311097540_n.jpg",
-      "assets/events/Singapore/480301979_4205064063063016_2658004189264352471_n.jpg",
-      "assets/events/Singapore/480302890_4206154669620622_425390567365379654_n.jpg",
-      "assets/events/Singapore/480329432_4205064319729657_7385010236097935085_n.jpg",
-      "assets/events/Singapore/480355726_4206154422953980_6862546017144251364_n.jpg",
-      "assets/events/Singapore/480413296_4206154299620659_1430139226184261194_n.jpg",
-      "assets/events/Singapore/480469533_4205064259729663_6969609578840001342_n.jpg",
-      "assets/events/Singapore/480482597_4205064226396333_7324162432973291658_n.jpg",
-      "assets/events/Singapore/480484747_4206154436287312_1064857684475151194_n.jpg",
-      "assets/events/Singapore/480537270_4206154662953956_7085134476662411451_n.jpg",
-      "assets/events/Singapore/482063018_4227486180820804_8614747665903427052_n.jpg"
-    ]
-  },
   "Thanh Kieu": {
     "title": "Thanh Kieu",
-    "date": "",
-    "desc": "",
+    "date": "2025",
+    "desc": "Fostering the comtemporary art to modern expression.",
     "images": [
+      "assets/events/Thanh Kieu/9a630679-0cc9-40ad-a4d1-35fc27e4d97d.jpeg",
       "assets/events/Thanh Kieu/482676687_17897037666159518_1071748436194050925_n.jpg",
       "assets/events/Thanh Kieu/482697388_17897036238159518_31342809483457678_n.jpg",
       "assets/events/Thanh Kieu/482700513_17897036265159518_7174963160652830187_n.jpg",
@@ -200,13 +171,17 @@
       "assets/events/Thanh Kieu/482821107_17897037693159518_1936053469484804414_n.jpg",
       "assets/events/Thanh Kieu/482843791_17897037702159518_4936118072639234905_n.jpg",
       "assets/events/Thanh Kieu/482850221_17897037654159518_4737692938216444334_n.jpg",
-      "assets/events/Thanh Kieu/482998785_17897036202159518_8315894914597078255_n.jpg"
+      "assets/events/Thanh Kieu/482998785_17897036202159518_8315894914597078255_n.jpg",
+      "assets/events/Thanh Kieu/PTP_7510.JPG",
+      "assets/events/Thanh Kieu/PTP_7549.JPG",
+      "assets/events/Thanh Kieu/PTP_7564.JPG",
+      "assets/events/Thanh Kieu/PTP_7632.JPG"
     ]
   },
   "Travel": {
     "title": "Travel",
-    "date": "",
-    "desc": "",
+    "date": "2018",
+    "desc": "Go far to be back",
     "images": [
       "assets/events/Travel/142556722_3053714471531320_7708951126147553229_n.jpg",
       "assets/events/Travel/147973219_3068790103357090_6725394669751704363_n.jpg",
@@ -335,7 +310,7 @@
   },
   "Trekking": {
     "title": "Trekking",
-    "date": "",
+    "date": "2018",
     "desc": "",
     "images": [
       "assets/events/Trekking/475460614_4192787690957320_4160310489445440164_n.jpg",
@@ -343,8 +318,8 @@
     ]
   },
   "UEH": {
-    "title": "Ueh",
-    "date": "",
+    "title": "UEH Graduation",
+    "date": "2021",
     "desc": "",
     "images": [
       "assets/events/UEH/189365937_3153911084844991_1282265830309278337_n.jpg",
@@ -375,7 +350,7 @@
   },
   "art": {
     "title": "Art",
-    "date": "",
+    "date": "2018",
     "desc": "",
     "images": [
       "assets/events/art/100971984_2829924043910365_7347892631965270016_n.jpg",
@@ -478,24 +453,6 @@
       "assets/events/art/486081725_4237332133169542_2835089945182087417_n.jpg"
     ]
   },
-  "eat": {
-    "title": "Eat",
-    "date": "",
-    "desc": "",
-    "images": [
-      "assets/events/eat/480203511_4206594946243261_5879947822642419576_n.jpg",
-      "assets/events/eat/480281393_4206595169576572_4850301777318298520_n.jpg",
-      "assets/events/eat/480439721_4206595179576571_1522485508348516483_n.jpg",
-      "assets/events/eat/481984329_4227185750850847_6774461101516551861_n.jpg",
-      "assets/events/eat/482207618_4227185830850839_4354809662181288793_n.jpg",
-      "assets/events/eat/482209182_4227185554184200_6904997407461439101_n.jpg",
-      "assets/events/eat/482240174_4227185754184180_6888756387702335860_n.jpg",
-      "assets/events/eat/485122424_4236249726611116_8677710875912286856_n.jpg",
-      "assets/events/eat/485362244_4236249759944446_6155401278005846601_n.jpg",
-      "assets/events/eat/485794047_4236249799944442_6128891873657773019_n.jpg",
-      "assets/events/eat/485979503_4237338986502190_653928897277476697_n.jpg"
-    ]
-  },
   "flower": {
     "title": "Flower",
     "date": "",
@@ -527,7 +484,7 @@
   },
   "friends": {
     "title": "Friends",
-    "date": "",
+    "date": "2",
     "desc": "",
     "images": [
       "assets/events/friends/464328646_17880193329159518_1590461007796317455_n.jpg",
@@ -622,7 +579,7 @@
   },
   "music": {
     "title": "Music",
-    "date": "",
+    "date": "2015",
     "desc": "",
     "images": [
       "assets/events/music/475108085_4190909144478508_7055173247745338328_n.jpg",
@@ -654,7 +611,7 @@
     ]
   },
   "traninex": {
-    "title": "Tráninex",
+    "title": "Trásinex",
     "date": "",
     "desc": "",
     "images": [
@@ -677,10 +634,11 @@
     ]
   },
   "Bla glamping": {
-    "title": "Bla Glamping",
-    "date": "",
-    "desc": "",
+    "title": "Blá Glamping",
+    "date": "2022",
+    "desc": "From scratch to business",
     "images": [
+      "assets/events/Bla glamping/173690708_2807633599458707_8579043787849068065_n.jpg",
       "assets/events/Bla glamping/172459836_3118139321755501_7967300746580258103_n.jpg",
       "assets/events/Bla glamping/182108742_3134930353409731_1059519174012946803_n.jpg",
       "assets/events/Bla glamping/182350966_3134930233409743_3453899632740777800_n.jpg",
@@ -712,6 +670,44 @@
       "assets/events/Bla glamping/472680392_4170955153140574_8838857642982943286_n.jpg",
       "assets/events/Bla glamping/476152525_4197298327172923_3493300318487828909_n.jpg",
       "assets/events/Bla glamping/Screenshot 2025-05-03 at 12.51.31 AM.png"
+    ]
+  },
+  "Singapore": {
+    "title": "The International Robot Assembly and Programming MYOR competition 2023",
+    "date": "2023",
+    "desc": "A competition held in Singapore, where students from various universities participated in a robot assembly and programming challenge.",
+    "images": [
+      "assets/events/Singapore/482063018_4227486180820804_8614747665903427052_n.jpg",
+      "assets/events/Singapore/1a2682b0-8209-43da-b817-4e5e0664c3ba.jpeg",
+      "assets/events/Singapore/43fdfdca-0b0c-4487-8953-6cd62bf100f2.jpeg",
+      "assets/events/Singapore/473422633_572159565718581_2161662117391138199_n.jpg",
+      "assets/events/Singapore/479715871_4206154256287330_3311496134993758310_n.jpg",
+      "assets/events/Singapore/480039537_4205064203063002_6272500706913330598_n.jpg",
+      "assets/events/Singapore/480132026_4205064256396330_8340173839257268669_n.jpg",
+      "assets/events/Singapore/480212590_4205064216396334_7105482377236513053_n.jpg",
+      "assets/events/Singapore/480218706_4205064149729674_7195190929246706260_n.jpg",
+      "assets/events/Singapore/480222274_4206154206287335_118695517514931104_n.jpg",
+      "assets/events/Singapore/480229573_4206154482953974_8741520010838796292_n.jpg",
+      "assets/events/Singapore/480230932_4205064196396336_6231000798488659514_n.jpg",
+      "assets/events/Singapore/480239128_4206154552953967_4482476482597447138_n.jpg",
+      "assets/events/Singapore/480242611_4206154252953997_4942946996495806798_n.jpg",
+      "assets/events/Singapore/480244146_4206154576287298_5493382993373039768_n.jpg",
+      "assets/events/Singapore/480244658_4206154666287289_4667058838172593965_n.jpg",
+      "assets/events/Singapore/480247577_4206154626287293_3178344682926489368_n.jpg",
+      "assets/events/Singapore/480271957_4206154559620633_3714860186642122794_n.jpg",
+      "assets/events/Singapore/480277822_4206154659620623_6282561744449427296_n.jpg",
+      "assets/events/Singapore/480283303_4206154532953969_3129719784311097540_n.jpg",
+      "assets/events/Singapore/480301979_4205064063063016_2658004189264352471_n.jpg",
+      "assets/events/Singapore/480302890_4206154669620622_425390567365379654_n.jpg",
+      "assets/events/Singapore/480329432_4205064319729657_7385010236097935085_n.jpg",
+      "assets/events/Singapore/480355726_4206154422953980_6862546017144251364_n.jpg",
+      "assets/events/Singapore/480413296_4206154299620659_1430139226184261194_n.jpg",
+      "assets/events/Singapore/480469533_4205064259729663_6969609578840001342_n.jpg",
+      "assets/events/Singapore/480482597_4205064226396333_7324162432973291658_n.jpg",
+      "assets/events/Singapore/480484747_4206154436287312_1064857684475151194_n.jpg",
+      "assets/events/Singapore/480537270_4206154662953956_7085134476662411451_n.jpg",
+      "assets/events/Singapore/700cb641-99de-48ec-9b72-03cc5d03a827.jpeg",
+      "assets/events/Singapore/d64bd04f-3f9f-4d3b-806e-b4d7cc074e8a.jpeg"
     ]
   }
 }
